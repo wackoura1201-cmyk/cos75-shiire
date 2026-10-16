@@ -4,26 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="refresh" content="0; url=https://cos75-shiire.wackoura.workers.dev/">
 <title>仕入れ画面</title>
 <style>body{font-family:sans-serif;padding:24px;line-height:1.7;color:#222}h1{font-size:20px}</style>
 </head>
 <body>
-<h1>仕入れ画面を開いています…</h1>
-<p id="msg">このまま少しお待ちください。</p>
-<script>
-// 仕入れ画面の固定URL。Mac mini の仮URL（毎回変わる）を url.txt に置き、そこへ飛ばす。
-// url.txt は Mac mini が仮URLが変わるたびに書き換える（purchase/publish_url.sh）。
-fetch("url.txt?t=" + Date.now(), { cache: "no-store" })
-  .then(function (r) { return r.text(); })
-  .then(function (t) {
-    var u = t.trim();
-    if (/^https:\/\/[a-z0-9-]+\.trycloudflare\.com$/.test(u)) { location.replace(u + "/"); return; }
-    throw new Error("bad");
-  })
-  .catch(function () {
-    document.getElementById("msg").textContent = "つながりませんでした。数分おいて開き直してください。直らないときは浦さんに連絡してください。";
-  });
-</script>
+<!-- 2026-10-16 に固定URLを Worker に移した。この GitHub Pages の入口は、先に伝えた人のために Worker へ飛ばすだけ。 -->
+<h1>仕入れ画面は新しいURLに移りました</h1>
+<p>自動で移動します。移動しないときは <a href="https://cos75-shiire.wackoura.workers.dev/">https://cos75-shiire.wackoura.workers.dev/</a> を開いてください。</p>
+<script>location.replace("https://cos75-shiire.wackoura.workers.dev/");</script>
 </body>
 </html>
